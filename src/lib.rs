@@ -1013,6 +1013,7 @@ impl Target for AppleTarget {
         // CMAKE_SYSTEM_NAME is used to tell cmake we're cross-compiling
         if self.is_ios_target() && !config.defined("CMAKE_SYSTEM_NAME") {
             cmd.arg("-DCMAKE_SYSTEM_NAME=iOS");
+            cmd.arg("-DCMAKE_MACOSX_BUNDLE=FALSE");
         }
     }
 
